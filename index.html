@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="imageWrapper" id="wrapper">
+        <img src="img/Img1.jpg" id="fullimg">
+        <span id="closeBtn" >x</span>
+    </div>
+    <div class="img-gallary">
+        <img src="img/Img1.jpg">
+        <img src="img/Img2.jpg">
+        <img src="img/img3.jpg">
+        <img src="img/img4.jpg">
+        <img src="img/img5.jpg">
+        <img src="img/img6.jpg">
+        <img src="img/img7.jpg">
+        <img src="img/img8.jpg">
+    </div>
+    <script>
+        let closeBtn = document.getElementById("closeBtn");
+        let wrapper = document.getElementById("wrapper");
+        let fullimg = document.getElementById("fullimg");
+        let images = document.querySelectorAll("img");
+        closeBtn.addEventListener('click',function(){
+            wrapper.style.display="none";
+        })
+        // images.forEach(function(im){
+            for(im of images){
+            im.addEventListener('click',function(e){
+                console.log(im);
+                fullimg.src=e.target.src;
+                wrapper.style.display='flex';
+
+            })    
+        }
+        // })
+    </script>
+</body>
+</html>
